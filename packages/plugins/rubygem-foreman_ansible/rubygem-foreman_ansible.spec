@@ -8,8 +8,8 @@
 %global foreman_min_version 3.3.0
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
-Version: 8.0.1
-Release: 2%{?foremandist}%{?dist}
+Version: 9.0.0
+Release: 1%{?foremandist}%{?dist}
 Summary: Ansible integration with Foreman (theforeman.org)
 Group: Applications/Systems
 License: GPLv3
@@ -37,7 +37,7 @@ BuildRequires: rubygem(foreman-tasks) >= 5.2.0
 BuildRequires: npm(@babel/core) >= 7.7.0
 BuildRequires: npm(@babel/core) < 8.0.0
 BuildRequires: npm(@theforeman/builder) >= 8.4.1
-BuildRequires: npm(@theforeman/builder) < 11.0.0
+BuildRequires: npm(@theforeman/builder) < 9.0.0
 # end package.json devDependencies BuildRequires
 
 # start package.json dependencies BuildRequires
@@ -117,6 +117,9 @@ cp -pa .%{gem_dir}/* \
 %{foreman_plugin_log}
 
 %changelog
+* Sun Aug 28 2022 Foreman Packaging Automation <packaging@theforeman.org> 9.0.0-1
+- Update to 9.0.0
+
 * Wed Aug 24 2022 Evgeni Golov - 8.0.1-2
 - Refs #35409 - Include sprockets assets
 
