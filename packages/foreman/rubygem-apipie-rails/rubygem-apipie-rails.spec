@@ -2,7 +2,7 @@
 %global gem_name apipie-rails
 
 Name: rubygem-%{gem_name}
-Version: 0.5.20
+Version: 0.8.2
 Release: 1%{?dist}
 Summary: Rails REST API documentation tool
 #This gem is released under MIT license. Copy is included in file MIT-LICENSE.
@@ -14,8 +14,8 @@ URL: https://github.com/Apipie/apipie-rails
 Source0: https://rubygems.org/gems/%{gem_name}-%{version}.gem
 
 # start specfile generated dependencies
-Requires: ruby >= 2.0.0
-BuildRequires: ruby >= 2.0.0
+Requires: ruby >= 2.6.0
+BuildRequires: ruby >= 2.6.0
 BuildRequires: rubygems-devel
 BuildArch: noarch
 # end specfile generated dependencies
@@ -78,6 +78,9 @@ cp -a .%{gem_dir}/* \
 %{gem_instdir}/spec
 
 %changelog
+* Sun Sep 25 2022 Foreman Packaging Automation <packaging@theforeman.org> 0.8.2-1
+- Update to 0.8.2
+
 * Fri Jul 22 2022 Ewoud Kohl van Wijngaarden <ewoud@kohlvanwijngaarden.nl> 0.5.20-1
 - Update to 0.5.20
 
