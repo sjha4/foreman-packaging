@@ -16,7 +16,7 @@
 %global foreman_proxy_settingsd_dir %{_root_sysconfdir}/foreman-proxy/settings.d
 
 Name: %{?scl_prefix}rubygem-%{gem_name}
-Version: 3.4.0
+Version: 3.4.1
 Release: 1%{?foremandist}%{?dist}
 Summary: Smart-Proxy Ansible plugin
 Group: Applications/Internet
@@ -35,19 +35,10 @@ Requires: ansible-collection-theforeman-foreman
 
 # start specfile generated dependencies
 Requires: foreman-proxy >= %{foreman_proxy_min_version}
-Requires: %{?scl_prefix_ruby}ruby(release)
-Requires: %{?scl_prefix_ruby}ruby >= 2.5
-Requires: %{?scl_prefix_ruby}ruby(rubygems)
-Requires: %{?scl_prefix}rubygem(net-ssh)
-Requires: %{?scl_prefix}rubygem(smart_proxy_dynflow) >= 0.8
-Requires: %{?scl_prefix}rubygem(smart_proxy_dynflow) < 1
-Requires: %{?scl_prefix}rubygem(smart_proxy_remote_execution_ssh) >= 0.4
-Requires: %{?scl_prefix}rubygem(smart_proxy_remote_execution_ssh) < 1
-BuildRequires: %{?scl_prefix_ruby}ruby(release)
-BuildRequires: %{?scl_prefix_ruby}ruby >= 2.5
-BuildRequires: %{?scl_prefix_ruby}rubygems-devel
+Requires: ruby >= 2.5
+BuildRequires: ruby >= 2.5
+BuildRequires: rubygems-devel
 BuildArch: noarch
-Provides: %{?scl_prefix}rubygem(%{gem_name}) = %{version}
 Provides: foreman-proxy-plugin-%{plugin_name} = %{version}
 # end specfile generated dependencies
 
@@ -148,6 +139,9 @@ ln -sv %{_root_sysconfdir}/foreman-proxy/ansible.cfg %{buildroot}%{foreman_proxy
 %doc %{gem_instdir}/README.md
 
 %changelog
+* Sun Sep 25 2022 Foreman Packaging Automation <packaging@theforeman.org> 3.4.1-1
+- Update to 3.4.1
+
 * Thu Mar 31 2022 Adam Ruzicka <aruzicka@redhat.com> 3.4.0-1
 - Update to 3.4.0
 
