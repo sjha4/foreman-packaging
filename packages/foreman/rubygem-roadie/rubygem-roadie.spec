@@ -2,7 +2,7 @@
 %global gem_name roadie
 
 Name: rubygem-%{gem_name}
-Version: 4.0.0
+Version: 5.0.1
 Release: 1%{?dist}
 Summary: Making HTML emails comfortable for the Ruby rockstars
 License: MIT
@@ -10,8 +10,8 @@ URL: https://github.com/Mange/roadie
 Source0: https://rubygems.org/gems/%{gem_name}-%{version}.gem
 
 # start specfile generated dependencies
-Requires: ruby >= 2.4
-BuildRequires: ruby >= 2.4
+Requires: ruby >= 2.6
+BuildRequires: ruby >= 2.6
 BuildRequires: rubygems-devel
 BuildArch: noarch
 # end specfile generated dependencies
@@ -67,6 +67,9 @@ cp -a .%{gem_dir}/* \
 %{gem_instdir}/spec
 
 %changelog
+* Sun Oct 02 2022 Foreman Packaging Automation <packaging@theforeman.org> 5.0.1-1
+- Update to 5.0.1
+
 * Fri Jul 22 2022 Foreman Packaging Automation <packaging@theforeman.org> 4.0.0-1
 - Update to 4.0.0
 
